@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="520" viewBox="0 0 1500 520">
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#1f2937}.title{font-size:28px;font-weight:700}.h{font-size:18px;font-weight:700}.t{font-size:14px}
+.b{fill:#fff;stroke:#475569;stroke-width:2;rx:12}.hi{fill:#eff6ff;stroke:#2563eb;stroke-width:2;rx:12}.err{fill:#fff1f2;stroke:#dc2626;stroke-width:2;rx:12}.arrow{stroke:#475569;stroke-width:2;fill:none;marker-end:url(#a)}
+</style><defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker></defs>
+<text x="50" y="55" class="title">Investigation flow по order_id / trace_id</text>
+<rect x="60" y="170" width="210" height="100" class="b"/><text x="105" y="210" class="h">Support ticket</text><text x="91" y="240" class="t">order_id = 12345</text>
+<rect x="350" y="170" width="240" height="100" class="hi"/><text x="395" y="210" class="h">Order Investigation</text><text x="382" y="240" class="t">centralized log search</text>
+<rect x="680" y="170" width="240" height="100" class="err"/><text x="742" y="210" class="h">ERROR log</text><text x="704" y="240" class="t">CRM database timeout</text>
+<rect x="1010" y="170" width="210" height="100" class="hi"/><text x="1060" y="210" class="h">trace_id</text><text x="1046" y="240" class="t">open distributed trace</text>
+<rect x="1300" y="170" width="150" height="100" class="b"/><text x="1330" y="210" class="h">Runbook</text><text x="1324" y="240" class="t">fix / replay</text>
+<path d="M270 220 L350 220" class="arrow"/><path d="M590 220 L680 220" class="arrow"/><path d="M920 220 L1010 220" class="arrow"/><path d="M1220 220 L1300 220" class="arrow"/>
+<text x="350" y="340" class="t">logs explain context</text><text x="1005" y="340" class="t">trace explains cross-service path</text>
+</svg>
