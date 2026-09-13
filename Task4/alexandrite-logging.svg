@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="980" viewBox="0 0 1700 980">
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#1f2937}.title{font-size:30px;font-weight:700}.h{font-size:18px;font-weight:700}.t{font-size:14px}.small{font-size:13px}
+.source{fill:#f8fafc;stroke:#475569;stroke-width:2;rx:12}
+.new{fill:#eff6ff;stroke:#2563eb;stroke-width:2.5;rx:12}
+.store{fill:#f0fdf4;stroke:#16a34a;stroke-width:2.5;rx:12}
+.user{fill:#faf5ff;stroke:#9333ea;stroke-width:2;rx:12}
+.sec{fill:#fff7ed;stroke:#ea580c;stroke-width:2;rx:12}
+.arrow{stroke:#475569;stroke-width:2;fill:none;marker-end:url(#a)}
+.blue{stroke:#2563eb;stroke-width:2.4;fill:none;marker-end:url(#b)}
+.green{stroke:#16a34a;stroke-width:2.4;fill:none;marker-end:url(#g)}
+</style>
+<defs>
+<marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker>
+<marker id="b" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/></marker>
+<marker id="g" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#16a34a"/></marker>
+</defs>
+<text x="55" y="55" class="title">«Александрит»: централизованное логирование и анализ</text>
+<text x="55" y="85" class="small">Общий observability pipeline с Task3: logs связаны с traces через trace_id / span_id</text>
+
+<rect x="55" y="145" width="260" height="92" class="source"/>
+<text x="92" y="182" class="h">Online Shop / CRM</text><text x="93" y="211" class="t">Java · SLF4J / Logback JSON</text>
+<rect x="55" y="290" width="260" height="92" class="source"/>
+<text x="130" y="327" class="h">MES</text><text x="95" y="356" class="t">.NET · Serilog JSON</text>
+<rect x="55" y="435" width="260" height="92" class="source"/>
+<text x="125" y="472" class="h">RabbitMQ</text><text x="93" y="501" class="t">integration + broker logs</text>
+<rect x="55" y="580" width="260" height="92" class="source"/>
+<text x="93" y="617" class="h">Gateway / Infrastructure</text><text x="91" y="646" class="t">access · audit · system logs</text>
+
+<rect x="470" y="275" width="300" height="145" class="new"/>
+<text x="520" y="315" class="h">OpenTelemetry Collector</text>
+<text x="510" y="346" class="t">receive · enrich · batch</text>
+<text x="510" y="374" class="t">filter · redact · mask</text>
+
+<rect x="900" y="275" width="260" height="145" class="new"/>
+<text x="960" y="315" class="h">Data Prepper</text>
+<text x="948" y="346" class="t">ingest · transform</text>
+<text x="947" y="374" class="t">route to indexes</text>
+
+<rect x="1290" y="245" width="310" height="175" class="store"/>
+<text x="1350" y="290" class="h">Managed OpenSearch</text>
+<text x="1338" y="322" class="t">structured log storage</text>
+<text x="1338" y="350" class="t">indexes · ISM · retention</text>
+<text x="1338" y="378" class="t">search · aggregations</text>
+
+<rect x="1290" y="545" width="310" height="135" class="user"/>
+<text x="1340" y="585" class="h">OpenSearch Dashboards</text>
+<text x="1336" y="616" class="t">Order Investigation</text>
+<text x="1336" y="644" class="t">Errors · Security · Alerts</text>
+
+<rect x="870" y="590" width="280" height="115" class="user"/>
+<text x="930" y="632" class="h">Support / Developers</text>
+<text x="925" y="663" class="t">read-only / role-based access</text>
+
+<rect x="465" y="590" width="310" height="120" class="sec"/>
+<text x="525" y="630" class="h">Security controls</text>
+<text x="500" y="660" class="t">TLS · RBAC · least privilege</text>
+<text x="500" y="688" class="t">masking · audit</text>
+
+<path d="M315 190 C390 190 400 310 470 325" class="blue"/>
+<path d="M315 336 L470 345" class="blue"/>
+<path d="M315 481 C390 481 400 385 470 370" class="blue"/>
+<path d="M315 626 C390 626 420 410 470 395" class="blue"/>
+<path d="M770 348 L900 348" class="blue"/>
+<path d="M1160 348 L1290 335" class="green"/>
+<path d="M1445 420 L1445 545" class="green"/>
+<path d="M1150 645 L1290 615" class="arrow"/>
+<path d="M870 650 L775 650" class="arrow"/>
+
+<text x="475" y="245" class="small">shared with Task3 tracing pipeline</text>
+<text x="1295" y="735" class="small">trace_id / span_id provide navigation between logs and traces</text>
+</svg>

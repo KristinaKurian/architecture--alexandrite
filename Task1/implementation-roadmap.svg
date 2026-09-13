@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="560" viewBox="0 0 1600 560">
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#1f2937}.title{font-size:30px;font-weight:700}.m{font-size:19px;font-weight:700}.t{font-size:15px}.box{fill:#fff;stroke:#475569;stroke-width:2;rx:12}.p0{fill:#fef2f2;stroke:#dc2626;stroke-width:2;rx:12}.p1{fill:#eff6ff;stroke:#2563eb;stroke-width:2;rx:12}
+</style>
+<text x="50" y="55" class="title">План архитектурных изменений на 6 месяцев</text>
+<line x1="100" y1="130" x2="1500" y2="130" stroke="#94a3b8" stroke-width="4"/>
+<circle cx="150" cy="130" r="11" fill="#334155"/><text x="102" y="105" class="m">Месяц 1</text><circle cx="410" cy="130" r="11" fill="#334155"/><text x="362" y="105" class="m">Месяц 2</text><circle cx="670" cy="130" r="11" fill="#334155"/><text x="622" y="105" class="m">Месяц 3</text><circle cx="930" cy="130" r="11" fill="#334155"/><text x="882" y="105" class="m">Месяц 4</text><circle cx="1190" cy="130" r="11" fill="#334155"/><text x="1142" y="105" class="m">Месяц 5</text><circle cx="1450" cy="130" r="11" fill="#334155"/><text x="1402" y="105" class="m">Месяц 6</text>
+<rect x="70" y="175" width="210" height="150" class="p0"/><text x="96" y="210" class="m">Наблюдаемость</text><text x="95" y="240" class="t">Baseline + SLO</text><text x="95" y="265" class="t">Correlation IDs</text><text x="95" y="290" class="t">Dashboard EXPLAIN</text>
+<rect x="330" y="175" width="210" height="150" class="p0"/><text x="365" y="210" class="m">Надёжность</text><text x="355" y="240" class="t">Outbox + retry</text><text x="355" y="265" class="t">DLQ + replay</text><text x="355" y="290" class="t">Idempotency</text>
+<rect x="590" y="175" width="470" height="150" class="p0"/><text x="702" y="210" class="m">Async pricing + B2B isolation</text><text x="635" y="240" class="t">Queue · workers · 202/status API</text><text x="635" y="265" class="t">API Gateway · rate limits · quotas</text><text x="635" y="290" class="t">Backpressure</text>
+<rect x="850" y="355" width="210" height="125" class="p1"/><text x="890" y="390" class="m">Dashboard</text><text x="875" y="420" class="t">Keyset + cache</text><text x="875" y="445" class="t">Read model if needed</text>
+<rect x="1110" y="175" width="210" height="150" class="p1"/><text x="1140" y="210" class="m">HA / Scaling</text><text x="1135" y="240" class="t">LB + replicas</text><text x="1135" y="265" class="t">DB / RabbitMQ HA</text><text x="1135" y="290" class="t">Load tests</text>
+<rect x="1370" y="175" width="180" height="150" class="p1"/><text x="1395" y="210" class="m">Delivery</text><text x="1390" y="240" class="t">Contract tests</text><text x="1390" y="265" class="t">E2E / smoke</text><text x="1390" y="290" class="t">Rollback</text>
+<text x="70" y="530" class="t">P0 — бизнес-критичные изменения; P1 — масштабирование и снижение операционных рисков.</text>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760">
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#1f2937}.title{font-size:30px;font-weight:700}.h{font-size:19px;font-weight:700}.t{font-size:14px}.small{font-size:13px}
+.client{fill:#faf5ff;stroke:#9333ea;stroke-width:2;rx:12}.app{fill:#eff6ff;stroke:#2563eb;stroke-width:2.5;rx:12}.cache{fill:#fff7ed;stroke:#ea580c;stroke-width:2.5;rx:12}.db{fill:#f0fdf4;stroke:#16a34a;stroke-width:2.5;rx:12}.mq{fill:#f8fafc;stroke:#475569;stroke-width:2;rx:12}
+.arrow{stroke:#475569;stroke-width:2;fill:none;marker-end:url(#a)}.hot{stroke:#ea580c;stroke-width:2.5;fill:none;marker-end:url(#o)}.async{stroke-dasharray:8 6}
+</style>
+<defs>
+<marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker>
+<marker id="o" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#ea580c"/></marker>
+</defs>
+<text x="55" y="55" class="title">«Александрит»: кеширование MES dashboard</text>
+<text x="55" y="85" class="small">Source of truth остаётся MES DB; Redis ускоряет только горячий read-path</text>
+
+<rect x="70" y="190" width="250" height="105" class="client"/>
+<text x="125" y="232" class="h">MES Operator</text><text x="113" y="263" class="t">Dashboard / first page</text>
+
+<rect x="440" y="190" width="280" height="105" class="app"/>
+<text x="520" y="232" class="h">MES Backend</text><text x="483" y="263" class="t">Cache-Aside + invalidation</text>
+
+<rect x="850" y="115" width="280" height="120" class="cache"/>
+<text x="955" y="158" class="h">Redis</text><text x="900" y="189" class="t">hot first pages by status</text><text x="914" y="214" class="small">TTL + shared cache</text>
+
+<rect x="850" y="355" width="280" height="120" class="db"/>
+<text x="948" y="398" class="h">MES DB</text><text x="908" y="429" class="t">source of truth</text><text x="895" y="454" class="small">optimized SQL + index</text>
+
+<rect x="1260" y="355" width="260" height="120" class="mq"/>
+<text x="1318" y="398" class="h">Outbox table</text><text x="1295" y="429" class="t">OrderStatusChanged</text><text x="1307" y="454" class="small">same DB transaction</text>
+
+<rect x="1260" y="570" width="260" height="105" class="mq"/>
+<text x="1323" y="612" class="h">RabbitMQ</text><text x="1305" y="643" class="t">Outbox Publisher</text>
+
+<path d="M320 242 L440 242" class="arrow"/>
+<path d="M720 222 C780 190 810 175 850 175" class="hot"/>
+<path d="M720 265 C800 330 810 395 850 415" class="arrow"/>
+<path d="M1130 415 L1260 415" class="arrow"/>
+<path d="M1390 475 L1390 570" class="arrow async"/>
+<text x="750" y="160" class="small">HIT → fast response</text>
+<text x="745" y="380" class="small">MISS → DB</text>
+<text x="850" y="300" class="small">after commit: invalidate old/new status keys</text>
+</svg>
