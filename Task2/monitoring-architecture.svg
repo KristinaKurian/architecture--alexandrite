@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="820" viewBox="0 0 1500 820">
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#1f2937}.title{font-size:30px;font-weight:700}.h{font-size:19px;font-weight:700}.t{font-size:15px}.small{font-size:13px}
+.app{fill:#eff6ff;stroke:#2563eb;stroke-width:2;rx:13}.infra{fill:#fff7ed;stroke:#ea580c;stroke-width:2;rx:13}.store{fill:#f0fdf4;stroke:#16a34a;stroke-width:2.5;rx:13}.view{fill:#faf5ff;stroke:#9333ea;stroke-width:2;rx:13}.arrow{stroke:#475569;stroke-width:2;fill:none;marker-end:url(#a)}
+</style>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker></defs>
+<text x="55" y="55" class="title">«Александрит»: архитектура мониторинга</text>
+
+<rect x="60" y="125" width="250" height="100" class="app"/><text x="115" y="165" class="h">Online Shop / CRM</text><text x="108" y="195" class="t">Spring Boot · Micrometer</text>
+<rect x="60" y="290" width="250" height="100" class="app"/><text x="155" y="330" class="h">MES</text><text x="105" y="360" class="t">.NET · OpenTelemetry</text>
+<rect x="60" y="455" width="250" height="100" class="infra"/><text x="135" y="495" class="h">RabbitMQ</text><text x="96" y="525" class="t">Prometheus plugin</text>
+<rect x="60" y="620" width="250" height="100" class="infra"/><text x="115" y="660" class="h">VM / Managed DB</text><text x="92" y="690" class="t">Unified Agent / native metrics</text>
+
+<rect x="460" y="235" width="300" height="160" class="store"/><text x="505" y="278" class="h">Prometheus-compatible</text><text x="515" y="310" class="h">metrics pipeline</text><text x="500" y="345" class="t">Remote Write / collectors</text>
+<rect x="860" y="235" width="300" height="160" class="store"/><text x="915" y="278" class="h">Yandex Managed</text><text x="915" y="310" class="h">Service for Prometheus</text><text x="930" y="347" class="t">storage · PromQL · rules</text>
+
+<rect x="1235" y="135" width="220" height="105" class="view"/><text x="1285" y="177" class="h">Dashboards</text><text x="1270" y="207" class="t">Yandex Monitoring</text>
+<rect x="1235" y="300" width="220" height="105" class="view"/><text x="1303" y="342" class="h">Alerts</text><text x="1276" y="372" class="t">Warning / Critical</text>
+<rect x="1235" y="465" width="220" height="105" class="view"/><text x="1294" y="507" class="h">Runbooks</text><text x="1268" y="537" class="t">on-call · incidents</text>
+
+<path d="M310 175 C390 175 390 270 460 285" class="arrow"/>
+<path d="M310 340 L460 320" class="arrow"/>
+<path d="M310 505 C390 505 390 370 460 350" class="arrow"/>
+<path d="M310 670 C390 670 390 400 460 365" class="arrow"/>
+<path d="M760 315 L860 315" class="arrow"/>
+<path d="M1160 290 L1235 195" class="arrow"/>
+<path d="M1160 325 L1235 350" class="arrow"/>
+<path d="M1345 405 L1345 465" class="arrow"/>
+
+<text x="470" y="445" class="small">RED: API · USE: infrastructure · Golden Signals: order flow</text>
+<text x="875" y="445" class="small">High-cardinality IDs remain in logs/traces, not metric labels</text>
+</svg>
