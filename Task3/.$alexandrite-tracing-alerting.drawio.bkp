@@ -1,0 +1,79 @@
+<mxfile host="Electron">
+  <diagram id="alexandrite" name="Tracing + Alerting">
+    <mxGraphModel dx="1134" dy="761" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="shop" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#475569;strokeWidth=2;" value="Online Shop Backend" vertex="1">
+          <mxGeometry height="70" width="190" x="40" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="mes" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#475569;strokeWidth=2;" value="MES B2B / Backend" vertex="1">
+          <mxGeometry height="70" width="190" x="40" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="mq" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#475569;strokeWidth=2;" value="RabbitMQ" vertex="1">
+          <mxGeometry height="70" width="190" x="40" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="crm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#475569;strokeWidth=2;" value="CRM Backend" vertex="1">
+          <mxGeometry height="70" width="190" x="40" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="collector" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff1f2;strokeColor=#dc2626;strokeWidth=2;" value="OpenTelemetry Collector" vertex="1">
+          <mxGeometry height="80" width="220" x="360" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="prepper" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff1f2;strokeColor=#dc2626;strokeWidth=2;" value="Data Prepper" vertex="1">
+          <mxGeometry height="80" width="180" x="660" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="os" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff1f2;strokeColor=#dc2626;strokeWidth=2;" value="Managed OpenSearch" vertex="1">
+          <mxGeometry height="80" width="200" x="920" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="dash" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff1f2;strokeColor=#dc2626;strokeWidth=2;" value="OpenSearch Dashboards" vertex="1">
+          <mxGeometry height="80" width="200" x="920" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="span" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=2;" value="Span Metrics Connector" vertex="1">
+          <mxGeometry height="80" width="220" x="360" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="flow" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=2;" value="Order Flow Monitor" vertex="1">
+          <mxGeometry height="80" width="200" x="660" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="alerts" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=2;" value="Monitoring / Alerts" vertex="1">
+          <mxGeometry height="80" width="190" x="500" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="shop" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#dc2626;strokeWidth=2;endArrow=block;" target="collector" value="OTLP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="mes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#dc2626;strokeWidth=2;endArrow=block;" target="collector" value="OTLP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="crm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#dc2626;strokeWidth=2;endArrow=block;" target="collector" value="OTLP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="collector" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#dc2626;strokeWidth=2;endArrow=block;" target="prepper" value="OTLP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="prepper" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#dc2626;strokeWidth=2;endArrow=block;" target="os" value="traces">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="dash" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#dc2626;strokeWidth=2;endArrow=block;" target="os" value="query">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="mes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;" target="mq" value="traceparent + IDs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="mq" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;strokeWidth=2;endArrow=block;" target="crm" value="traceparent + IDs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g1" edge="1" parent="1" source="collector" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#16a34a;strokeWidth=2;endArrow=block;" target="span" value="derived metrics">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g2" edge="1" parent="1" source="os" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#16a34a;strokeWidth=2;endArrow=block;" target="flow" value="trace data">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g3" edge="1" parent="1" source="span" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#16a34a;strokeWidth=2;endArrow=block;" target="alerts" value="metrics">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g4" edge="1" parent="1" source="flow" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#16a34a;strokeWidth=2;endArrow=block;" target="alerts" value="stuck orders">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
